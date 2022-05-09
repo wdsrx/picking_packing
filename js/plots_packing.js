@@ -1,4 +1,4 @@
-colors = ['#FF930F', '#FF9C16', '#FFA61D', '#FFAF24', '#FFB82B', '#FFC132', '#FFCB38', '#FFD43F', '#FFDD46', '#FFE64D', '#FFF054', '#FFF95B']
+var colors_packing = ['#FF930F', '#FF9C16', '#FFA61D', '#FFAF24', '#FFB82B', '#FFC132', '#FFCB38', '#FFD43F', '#FFDD46', '#FFE64D', '#FFF054', '#FFF95B']
 
 function packers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
@@ -32,7 +32,7 @@ function packers_w(warehouse, place) {
           name: hours[i],
           type: 'bar',
           marker: {
-            color: colors[i]
+            color: colors_packing[i]
           }
         }
         chunks.push(trace)
