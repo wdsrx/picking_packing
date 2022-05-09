@@ -1,6 +1,6 @@
-var colors_picking = ['#456FE8', '#4175E8', '#3D7BE9', '#3981E9', '#3587E9', '#318DEA', '#2D92EA', '#2998EB', '#259EEB', '#21A4EB', '#1DAAEC', '#19B0EC']
+var colors_batching = ['#51C26F', '#60C665', '#6EC95B', '#7DCD51', '#8CD047', '#9AD43D', '#A9D733', '#B7DB29', '#C6DE1F', '#D5E215', '#E3E50B', '#F2E901']
 
-function pickers_w(warehouse, place) {
+function batchers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
     //console.log(data);
 
@@ -32,7 +32,7 @@ function pickers_w(warehouse, place) {
           name: hours[i],
           type: 'bar',
           marker: {
-            color: colors_picking[i]
+            color: colors_batching[i]
           }
         }
         chunks.push(trace)
@@ -41,7 +41,7 @@ function pickers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Number of Lines Picked by Employee'
+          text: 'Number of Lines Moved (Batch) by Employee'
         },
         legend: {
           title: {
@@ -50,7 +50,7 @@ function pickers_w(warehouse, place) {
         },
         yaxis: {
           title: {
-            text: 'Total Lines Picked'
+            text: 'Total Lines Moved (Batch)'
           }
         }
       }
@@ -58,4 +58,4 @@ function pickers_w(warehouse, place) {
     }
   })
 }
-pickers_w('data/pickers_w10.json', 'plot_p_1_1')
+batchers_w('data/batchers_w10.json', 'plot_p_1_3')
