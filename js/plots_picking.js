@@ -62,4 +62,4 @@ function pickers_w(warehouse, place) {
     }
   })
 }
-pickers_w('data/pickers_w10.json', 'plot_p_1_1')
+pickers_w('data/W10_Picking.json', 'plot_p_1_1')

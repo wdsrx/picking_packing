@@ -62,4 +62,4 @@ function packers_w(warehouse, place) {
     }
   })
 }
-packers_w('data/packers_w10.json', 'plot_p_1_2')
+packers_w('data/W10_Rate And Ship.json', 'plot_p_1_2')

@@ -62,4 +62,4 @@ function batchers_w(warehouse, place) {
     }
   })
 }
-batchers_w('data/batchers_w10.json', 'plot_p_1_3')
+batchers_w('data/W10_Batch Move.json', 'plot_p_1_3')
