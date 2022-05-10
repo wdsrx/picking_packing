@@ -27,10 +27,10 @@ function batchers_w(warehouse, place) {
           picks.push(Object.values(line)[i])
         })
         var trace = {
+          type: 'bar',
           x: labels,
           y: picks,
           name: hours[i],
-          type: 'bar',
           marker: {
             color: colors_batching[i]
           }
@@ -41,7 +41,7 @@ function batchers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Lines "Moved" by Employee (Batch)'
+          text: 'Batch Lines "Moved" by Employee'
         },
         showlegend: false,
         legend: {

@@ -27,10 +27,10 @@ function packers_w(warehouse, place) {
           picks.push(Object.values(line)[i])
         })
         var trace = {
+          type: 'bar',
           x: labels,
           y: picks,
           name: hours[i],
-          type: 'bar',
           marker: {
             color: colors_packing[i]
           }
