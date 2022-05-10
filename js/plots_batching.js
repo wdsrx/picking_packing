@@ -41,8 +41,9 @@ function batchers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Number of Lines Moved (Batch) by Employee'
+          text: 'Lines "Moved" by Employee (Batch)'
         },
+        showlegend: false,
         legend: {
           title: {
             text: 'Hour of the Day'
@@ -52,6 +53,9 @@ function batchers_w(warehouse, place) {
           title: {
             text: 'Total Lines Moved (Batch)'
           }
+        },
+        xaxis: {
+          autotick: false
         }
       }
       Plotly.newPlot(place, chunks, layout)

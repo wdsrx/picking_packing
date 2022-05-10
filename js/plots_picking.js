@@ -41,8 +41,9 @@ function pickers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Number of Lines Picked by Employee'
+          text: 'Lines "Picked" by Employee'
         },
+        showlegend: false,
         legend: {
           title: {
             text: 'Hour of the Day'
@@ -52,6 +53,9 @@ function pickers_w(warehouse, place) {
           title: {
             text: 'Total Lines Picked'
           }
+        },
+        xaxis: {
+          autotick: false
         }
       }
       Plotly.newPlot(place, chunks, layout)
