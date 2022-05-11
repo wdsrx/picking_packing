@@ -1,5 +1,16 @@
 var colors_packing = ['#FF930F', '#FF9C16', '#FFA61D', '#FFAF24', '#FFB82B', '#FFC132', '#FFCB38', '#FFD43F', '#FFDD46', '#FFE64D', '#FFF054', '#FFF95B']
 
+var packed_orders = 0;
+function orders(data_source) {
+  d3.json(data_source).then((d) => {
+    packed_orders = parseInt(d['10']['Rate And Ship'])
+    //console.log(picked_orders)
+    //return picked_orders
+  });
+}
+orders('data/W10_Orders.json')
+
+
 function packers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
     //console.log(data);
@@ -31,7 +42,7 @@ function packers_w(warehouse, place) {
           type: 'indicator',
           //mode: 'number+delta',
           mode: 'number',
-          value: 200,
+          value: packed_orders,
           // number: {
           //   font: {
           //     color: 'gray',

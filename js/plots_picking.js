@@ -1,9 +1,20 @@
 var colors_picking = ['#456FE8', '#4175E8', '#3D7BE9', '#3981E9', '#3587E9', '#318DEA', '#2D92EA', '#2998EB', '#259EEB', '#21A4EB', '#1DAAEC', '#19B0EC']
 
+var picked_orders = 0;
+function orders(data_source) {
+  d3.json(data_source).then((d) => {
+    picked_orders = parseInt(d['10']['Picking'])
+    //console.log(picked_orders)
+    //return picked_orders
+  });
+}
+orders('data/W10_Orders.json')
+
+
 function pickers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
     //console.log(data);
-
+    
     if (Object.keys(data).length > 0) {
       // Hours
       first = Object.values(data)[0]
@@ -17,7 +28,7 @@ function pickers_w(warehouse, place) {
 
       var dataSize = hours.length
       var chunks = []
-      
+
       for (var i = 0; i < dataSize; i++) {
         // Picking Activity (y)
         var picks = []
@@ -31,16 +42,16 @@ function pickers_w(warehouse, place) {
           type: "indicator",
           //mode: "number+delta",
           mode: 'number',
-          value: 480,
+          value: picked_orders,
           // number: {
           //   font: {
           //     color: 'gray',
           //     size: 40
           //   }
           // },
-          delta: {
-            reference: 400
-          },
+          // delta: {
+          //   reference: 400
+          // },
           title: {
             //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
             text: "Orders Picked"
@@ -95,3 +106,4 @@ function pickers_w(warehouse, place) {
   })
 }
 pickers_w('data/W10_Picking.json', 'plot_p_1_1')
+
