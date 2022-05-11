@@ -39,21 +39,26 @@ function packers_w(warehouse, place) {
       }
       var layout = {
         barmode: 'stack',
-        title: {
-          //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Boxes "Packed" by Employee'
+        // title: {
+        //   //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
+        //   text: 'Boxes "Packed" by Employee'
+        // },
+        margin: {
+          l: 30,
+          r: 30,
+          t: 10
         },
         showlegend: false,
-        legend: {
-          title: {
-            text: 'Hour of the Day'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Total Boxes Packed'
-          }
-        },
+        // legend: {
+        //   title: {
+        //     text: 'Hour of the Day'
+        //   }
+        // },
+        // yaxis: {
+        //   title: {
+        //     text: 'Total Boxes Packed'
+        //   }
+        // },
         xaxis: {
           autotick: false
         }
