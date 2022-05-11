@@ -41,7 +41,10 @@ function packers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Boxes "Packed" by Employee'
+          text: 'Boxes "Packed" by Employee',
+          font: {
+            size: 20
+          }
         },
         margin: {
           l: 30,
@@ -59,7 +62,10 @@ function packers_w(warehouse, place) {
         //   }
         // },
         xaxis: {
-          autotick: false
+          autotick: false,
+          tickfont: {
+            size: 14
+          }
         }
       }
       Plotly.newPlot(place, chunks, layout)
