@@ -45,8 +45,7 @@ function pickers_w(warehouse, place) {
         },
         margin: {
           l: 30,
-          r: 30,
-          t: 10
+          r: 30
         },
         showlegend: false,
         // legend: {

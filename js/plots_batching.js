@@ -41,12 +41,11 @@ function batchers_w(warehouse, place) {
         barmode: 'stack',
         title: {
           //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Batch Lines "Moved" by Employee'
+          text: 'Batch Lines "Moved" <br>by Employee'
         },
         margin: {
           l: 30,
-          r: 30,
-          t: 10
+          r: 30
         },
         showlegend: false,
         // legend: {
