@@ -29,7 +29,8 @@ function pickers_w(warehouse, place) {
         var trace = [
         {
           type: "indicator",
-          mode: "number+delta",
+          //mode: "number+delta",
+          mode: 'number',
           value: 480,
           // number: {
           //   font: {

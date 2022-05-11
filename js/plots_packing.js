@@ -29,7 +29,8 @@ function packers_w(warehouse, place) {
         var trace = [
         {
           type: 'indicator',
-          mode: 'number+delta',
+          //mode: 'number+delta',
+          mode: 'number',
           value: 200,
           // number: {
           //   font: {
