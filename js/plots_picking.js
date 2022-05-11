@@ -39,21 +39,26 @@ function pickers_w(warehouse, place) {
       }
       var layout = {
         barmode: 'stack',
-        title: {
-          //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-          text: 'Lines "Picked" by Employee'
+        // title: {
+        //   //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
+        //   text: 'Lines "Picked" by Employee'
+        // },
+        margin: {
+          l: 30,
+          r: 30,
+          t: 10
         },
         showlegend: false,
-        legend: {
-          title: {
-            text: 'Hour of the Day'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Total Lines Picked'
-          }
-        },
+        // legend: {
+        //   title: {
+        //     text: 'Hour of the Day'
+        //   }
+        // },
+        // yaxis: {
+        //   title: {
+        //     text: 'Total Lines Picked'
+        //   }
+        // },
         xaxis: {
           autotick: false
         }
