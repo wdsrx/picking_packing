@@ -26,7 +26,27 @@ function pickers_w(warehouse, place) {
           //console.log(Object.values(line)[i])
           picks.push(Object.values(line)[i])
         })
-        var trace = {
+        var trace = [
+        {
+          type: "indicator",
+          mode: "number+delta",
+          value: 480,
+          number: {
+            font: {
+              color: 'gray',
+              size: 40
+            }
+          },
+          delta: {
+            reference: 400
+          },
+          title: {
+            text: "<span style='font-size: 1.5em'>Orders Picked</span>"
+            //text: "Orders Picked"
+          }
+        },
+        
+        {
           type: 'bar',
           x: labels,
           y: picks,
@@ -34,8 +54,9 @@ function pickers_w(warehouse, place) {
           marker: {
             color: colors_picking[i]
           }
-        }
-        chunks.push(trace)
+        }]
+        chunks.push(trace[0])
+        chunks.push(trace[1])
       }
       var layout = {
         barmode: 'stack',

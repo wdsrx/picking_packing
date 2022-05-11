@@ -26,7 +26,27 @@ function batchers_w(warehouse, place) {
           //console.log(Object.values(line)[i])
           picks.push(Object.values(line)[i])
         })
-        var trace = {
+        var trace = [
+        {
+            type: 'indicator',
+            mode: 'number+delta',
+            value: 300,
+            number: {
+              font: {
+                color: 'gray',
+                size: 40
+              }
+            },
+            delta: {
+                reference: 299
+            },
+            title:{
+                text: "<span style='font-size: 1.5em'>Orders Batched</span>"
+                //text: "Orders Batched"
+            }
+        },
+        
+        {
           type: 'bar',
           x: labels,
           y: picks,
@@ -34,8 +54,9 @@ function batchers_w(warehouse, place) {
           marker: {
             color: colors_batching[i]
           }
-        }
-        chunks.push(trace)
+        }]
+        chunks.push(trace[0])
+        chunks.push(trace[1])
       }
       var layout = {
         barmode: 'stack',
