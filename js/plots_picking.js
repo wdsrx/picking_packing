@@ -31,18 +31,18 @@ function pickers_w(warehouse, place) {
           type: "indicator",
           mode: "number+delta",
           value: 480,
-          number: {
-            font: {
-              color: 'gray',
-              size: 40
-            }
-          },
+          // number: {
+          //   font: {
+          //     color: 'gray',
+          //     size: 40
+          //   }
+          // },
           delta: {
             reference: 400
           },
           title: {
-            text: "<span style='font-size: 1.5em'>Orders Picked</span>"
-            //text: "Orders Picked"
+            //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
+            text: "Orders Picked"
           }
         },
         

@@ -31,18 +31,18 @@ function packers_w(warehouse, place) {
           type: 'indicator',
           mode: 'number+delta',
           value: 200,
-          number: {
-            font: {
-              color: 'gray',
-              size: 40
-            }
-          },
+          // number: {
+          //   font: {
+          //     color: 'gray',
+          //     size: 40
+          //   }
+          // },
           delta: {
             reference: 180
           },
           title: {
-            text: "<span style='font-size: 1.5em'>Orders Packed</span>"
-            //text: "Orders Packed"
+            //text: "<span style='font-size: 1.5em'>Orders Packed</span>"
+            text: "Orders Packed"
           }
         },
         

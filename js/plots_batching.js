@@ -31,18 +31,18 @@ function batchers_w(warehouse, place) {
             type: 'indicator',
             mode: 'number+delta',
             value: 300,
-            number: {
-              font: {
-                color: 'gray',
-                size: 40
-              }
-            },
+            // number: {
+            //   font: {
+            //     color: 'gray',
+            //     size: 40
+            //   }
+            // },
             delta: {
                 reference: 299
             },
             title:{
-                text: "<span style='font-size: 1.5em'>Orders Batched</span>"
-                //text: "Orders Batched"
+                //text: "<span style='font-size: 1.5em'>Orders Batched</span>"
+                text: "Orders Batched"
             }
         },
         
