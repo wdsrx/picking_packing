@@ -39,10 +39,10 @@ function pickers_w(warehouse, place) {
       }
       var layout = {
         barmode: 'stack',
-        // title: {
-        //   //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
-        //   text: 'Lines "Picked" by Employee'
-        // },
+        title: {
+          //text: 'WAREHOUSE ' + warehouse.substr(14,2) + ' - Picking by Employee'
+          text: 'Lines "Picked" by Employee'
+        },
         margin: {
           l: 30,
           r: 30,
