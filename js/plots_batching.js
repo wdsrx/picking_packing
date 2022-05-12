@@ -1,15 +1,5 @@
 var colors_batching = ['#51C26F', '#60C665', '#6EC95B', '#7DCD51', '#8CD047', '#9AD43D', '#A9D733', '#B7DB29', '#C6DE1F', '#D5E215', '#E3E50B', '#F2E901']
 
-// var batched_orders = 0;
-// function orders(data_source) {
-//   d3.json(data_source).then((d) => {
-//     batched_orders = parseInt(d['10']['Batch Move'])
-//     //console.log(picked_orders)
-//     //return picked_orders
-//   });
-// }
-// orders('data/W10_Orders.json')
-
 
 function batchers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
@@ -37,28 +27,7 @@ function batchers_w(warehouse, place) {
           //console.log(Object.values(line)[i])
           picks.push(Object.values(line)[i])
         })
-        var trace = [
-        {
-            type: 'indicator',
-            //mode: 'number+delta',
-            mode: 'number',
-            value: batched_orders,
-            // number: {
-            //   font: {
-            //     color: 'gray',
-            //     size: 40
-            //   }
-            // },
-            delta: {
-                reference: 299
-            },
-            title:{
-                //text: "<span style='font-size: 1.5em'>Orders Batched</span>"
-                text: "Orders Batched"
-            }
-        },
-        
-        {
+        var trace = {
           type: 'bar',
           x: labels,
           y: picks,
@@ -66,9 +35,8 @@ function batchers_w(warehouse, place) {
           marker: {
             color: colors_batching[i]
           }
-        }]
-        chunks.push(trace[0])
-        chunks.push(trace[1])
+        }
+        chunks.push(trace)
       }
       var layout = {
         barmode: 'stack',

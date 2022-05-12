@@ -1,21 +1,5 @@
 var colors_picking = ['#456FE8', '#4175E8', '#3D7BE9', '#3981E9', '#3587E9', '#318DEA', '#2D92EA', '#2998EB', '#259EEB', '#21A4EB', '#1DAAEC', '#19B0EC']
 
-var picked_orders = 0;
-var packed_orders = 0;
-var batched_orders = 0;
-
-function orders(data_source) {
-  d3.json(data_source).then((d) => {
-    picked_orders = parseInt(d['10']['Picking'])
-    packed_orders = parseInt(d['10']['Rate And Ship'])
-    batched_orders = parseInt(d['10']['Batch Move'])
-
-    //console.log(picked_orders)
-    //return picked_orders
-  });
-}
-//orders('data/W10_Orders.json')
-
 
 function pickers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
@@ -43,28 +27,7 @@ function pickers_w(warehouse, place) {
           //console.log(Object.values(line)[i])
           picks.push(Object.values(line)[i])
         })
-        var trace = [
-        {
-          type: "indicator",
-          //mode: "number+delta",
-          mode: 'number',
-          value: picked_orders,
-          // number: {
-          //   font: {
-          //     color: 'gray',
-          //     size: 40
-          //   }
-          // },
-          // delta: {
-          //   reference: 400
-          // },
-          title: {
-            //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
-            text: "Orders Picked"
-          }
-        },
-        
-        {
+        var trace = {
           type: 'bar',
           x: labels,
           y: picks,
@@ -72,9 +35,8 @@ function pickers_w(warehouse, place) {
           marker: {
             color: colors_picking[i]
           }
-        }]
-        chunks.push(trace[0])
-        chunks.push(trace[1])
+        }
+        chunks.push(trace)        
       }
       var layout = {
         barmode: 'stack',
@@ -111,6 +73,99 @@ function pickers_w(warehouse, place) {
     }
   })
 }
+
+
+
+
+
+function orders(data_source) {
+  d3.json(data_source).then((d) => {
+    var picked_orders = parseInt(d['10']['Picking'])
+    var packed_orders = parseInt(d['10']['Rate And Ship'])
+    var batched_orders = parseInt(d['10']['Batch Move'])
+
+    var data1 = [{
+      type: "indicator",
+      //mode: "number+delta",
+      mode: 'number',
+      value: picked_orders,
+      // number: {
+      //   font: {
+      //     color: 'gray',
+      //     size: 40
+      //   }
+      // },
+      // delta: {
+      //   reference: 400
+      // },
+      title: {
+        //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
+        text: "Orders Picked"
+      }
+    }]
+
+    var data2 = [{
+      type: "indicator",
+      //mode: "number+delta",
+      mode: 'number',
+      value: packed_orders,
+      // number: {
+      //   font: {
+      //     color: 'gray',
+      //     size: 40
+      //   }
+      // },
+      // delta: {
+      //   reference: 400
+      // },
+      title: {
+        //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
+        text: "Orders Packed"
+      }
+    }]
+
+    var data3 = [{
+      type: "indicator",
+      //mode: "number+delta",
+      mode: 'number',
+      value: batched_orders,
+      // number: {
+      //   font: {
+      //     color: 'gray',
+      //     size: 40
+      //   }
+      // },
+      // delta: {
+      //   reference: 400
+      // },
+      title: {
+        //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
+        text: "Orders Batched"
+      }
+    }]
+
+    var layout = {
+      //paper_bgcolor: "lightgray",
+      //width: 600,
+      height: 200,
+      margin: { t: 0, b: 0, l: 0, r: 0 }
+    }
+
+    Plotly.newPlot('plot_p_2_1', data1, layout)
+    Plotly.newPlot('plot_p_2_2', data2, layout)
+    Plotly.newPlot('plot_p_2_3', data3, layout)
+
+    //console.log(picked_orders)
+    //return picked_orders
+  });
+}
+
+
+
+
+
+
+
 orders('data/W10_Orders.json')
 pickers_w('data/W10_Picking.json', 'plot_p_1_1')
 

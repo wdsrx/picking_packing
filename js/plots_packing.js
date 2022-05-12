@@ -1,15 +1,5 @@
 var colors_packing = ['#FF930F', '#FF9C16', '#FFA61D', '#FFAF24', '#FFB82B', '#FFC132', '#FFCB38', '#FFD43F', '#FFDD46', '#FFE64D', '#FFF054', '#FFF95B']
 
-// var packed_orders = 0;
-// function orders(data_source) {
-//   d3.json(data_source).then((d) => {
-//     packed_orders = parseInt(d['10']['Rate And Ship'])
-//     //console.log(picked_orders)
-//     //return picked_orders
-//   });
-// }
-// orders('data/W10_Orders.json')
-
 
 function packers_w(warehouse, place) {
   d3.json(warehouse).then((data) => {
@@ -37,28 +27,7 @@ function packers_w(warehouse, place) {
           //console.log(Object.values(line)[i])
           picks.push(Object.values(line)[i])
         })
-        var trace = [
-        {
-          type: 'indicator',
-          //mode: 'number+delta',
-          mode: 'number',
-          value: packed_orders,
-          // number: {
-          //   font: {
-          //     color: 'gray',
-          //     size: 40
-          //   }
-          // },
-          delta: {
-            reference: 180
-          },
-          title: {
-            //text: "<span style='font-size: 1.5em'>Orders Packed</span>"
-            text: "Orders Packed"
-          }
-        },
-        
-        {
+        var trace = {
           type: 'bar',
           x: labels,
           y: picks,
@@ -66,9 +35,8 @@ function packers_w(warehouse, place) {
           marker: {
             color: colors_packing[i]
           }
-        }]
-        chunks.push(trace[0])
-        chunks.push(trace[1])
+        }
+        chunks.push(trace)
       }
       var layout = {
         barmode: 'stack',
