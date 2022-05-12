@@ -1,14 +1,20 @@
 var colors_picking = ['#456FE8', '#4175E8', '#3D7BE9', '#3981E9', '#3587E9', '#318DEA', '#2D92EA', '#2998EB', '#259EEB', '#21A4EB', '#1DAAEC', '#19B0EC']
 
 var picked_orders = 0;
+var packed_orders = 0;
+var batched_orders = 0;
+
 function orders(data_source) {
   d3.json(data_source).then((d) => {
     picked_orders = parseInt(d['10']['Picking'])
+    packed_orders = parseInt(d['10']['Rate And Ship'])
+    batched_orders = parseInt(d['10']['Batch Move'])
+
     //console.log(picked_orders)
     //return picked_orders
   });
 }
-orders('data/W10_Orders.json')
+//orders('data/W10_Orders.json')
 
 
 function pickers_w(warehouse, place) {
@@ -105,5 +111,6 @@ function pickers_w(warehouse, place) {
     }
   })
 }
+orders('data/W10_Orders.json')
 pickers_w('data/W10_Picking.json', 'plot_p_1_1')
 
