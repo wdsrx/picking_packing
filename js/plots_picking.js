@@ -86,8 +86,8 @@ function orders(data_source) {
 
     var data1 = [{
       type: "indicator",
-      //mode: "number+delta",
-      mode: 'number',
+      mode: "number+delta",
+      //mode: 'number',
       value: picked_orders,
       // number: {
       //   font: {
@@ -95,9 +95,10 @@ function orders(data_source) {
       //     size: 40
       //   }
       // },
-      // delta: {
-      //   reference: 400
-      // },
+      delta: {
+        reference: 0,
+        position: 'right'
+      },
       title: {
         //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
         text: "Orders Picked"
@@ -106,8 +107,8 @@ function orders(data_source) {
 
     var data2 = [{
       type: "indicator",
-      //mode: "number+delta",
-      mode: 'number',
+      mode: "number+delta",
+      //mode: 'number',
       value: packed_orders,
       // number: {
       //   font: {
@@ -115,9 +116,10 @@ function orders(data_source) {
       //     size: 40
       //   }
       // },
-      // delta: {
-      //   reference: 400
-      // },
+      delta: {
+        reference: 0,
+        position: 'right'
+      },
       title: {
         //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
         text: "Orders Packed"
@@ -126,8 +128,8 @@ function orders(data_source) {
 
     var data3 = [{
       type: "indicator",
-      //mode: "number+delta",
-      mode: 'number',
+      mode: "number+delta",
+      //mode: 'number',
       value: batched_orders,
       // number: {
       //   font: {
@@ -135,9 +137,10 @@ function orders(data_source) {
       //     size: 40
       //   }
       // },
-      // delta: {
-      //   reference: 400
-      // },
+      delta: {
+        reference: 210,
+        position: 'right'
+      },
       title: {
         //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
         text: "Orders Batched"
