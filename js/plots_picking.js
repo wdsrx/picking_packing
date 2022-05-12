@@ -80,15 +80,28 @@ function pickers_w(warehouse, place) {
 
 function orders(data_source) {
   d3.json(data_source).then((d) => {
-    var picked_orders = parseInt(d['10']['Picking'])
-    var packed_orders = parseInt(d['10']['Rate And Ship'])
-    var batched_orders = parseInt(d['10']['Batch Move'])
+    // console.log(d)
+    // console.log(d['10'])
+    // console.log(d['10']["('Today', 'Picking')"])
+
+
+    // var picked_orders = parseInt(d['10']['Picking'])
+    // var packed_orders = parseInt(d['10']['Rate And Ship'])
+    // var batched_orders = parseInt(d['10']['Batch Move'])
+
+    var today_picked_orders = parseInt(d['10']["('Today', 'Picking')"])
+    var today_packed_orders = parseInt(d['10']["('Today', 'Rate And Ship')"])
+    var today_batched_orders = parseInt(d['10']["('Today', 'Batch Move')"])
+
+    var yesterday_picked_orders = parseInt(d['10']["('Yesterday', 'Picking')"])
+    var yesterday_packed_orders = parseInt(d['10']["('Yesterday', 'Rate And Ship')"])
+    var yesterday_batched_orders = parseInt(d['10']["('Yesterday', 'Batch Move')"])
 
     var data1 = [{
       type: "indicator",
       mode: "number+delta",
       //mode: 'number',
-      value: picked_orders,
+      value: today_picked_orders,
       // number: {
       //   font: {
       //     color: 'gray',
@@ -96,7 +109,7 @@ function orders(data_source) {
       //   }
       // },
       delta: {
-        reference: 0,
+        reference: yesterday_picked_orders,
         position: 'right'
       },
       title: {
@@ -109,7 +122,7 @@ function orders(data_source) {
       type: "indicator",
       mode: "number+delta",
       //mode: 'number',
-      value: packed_orders,
+      value: today_packed_orders,
       // number: {
       //   font: {
       //     color: 'gray',
@@ -117,7 +130,7 @@ function orders(data_source) {
       //   }
       // },
       delta: {
-        reference: 0,
+        reference: yesterday_packed_orders,
         position: 'right'
       },
       title: {
@@ -130,7 +143,7 @@ function orders(data_source) {
       type: "indicator",
       mode: "number+delta",
       //mode: 'number',
-      value: batched_orders,
+      value: today_batched_orders,
       // number: {
       //   font: {
       //     color: 'gray',
@@ -138,7 +151,7 @@ function orders(data_source) {
       //   }
       // },
       delta: {
-        reference: 210,
+        reference: yesterday_batched_orders,
         position: 'right'
       },
       title: {
@@ -162,9 +175,6 @@ function orders(data_source) {
     //return picked_orders
   });
 }
-
-
-
 
 
 
