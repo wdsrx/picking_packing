@@ -69,7 +69,7 @@ function batchers_w(warehouse, place) {
           }
         }
       }
-      Plotly.newPlot(place, chunks, layout)
+      Plotly.newPlot(place, chunks, layout, {displayModeBar: false})
     }
   })
 }

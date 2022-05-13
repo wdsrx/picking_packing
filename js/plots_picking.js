@@ -69,7 +69,7 @@ function pickers_w(warehouse, place) {
           }
         }
       }
-      Plotly.newPlot(place, chunks, layout)
+      Plotly.newPlot(place, chunks, layout, {displayModeBar: false})
     }
   })
 }
@@ -167,9 +167,9 @@ function orders(data_source) {
       margin: { t: 0, b: 0, l: 0, r: 0 }
     }
 
-    Plotly.newPlot('plot_p_2_1', data1, layout)
-    Plotly.newPlot('plot_p_2_2', data2, layout)
-    Plotly.newPlot('plot_p_2_3', data3, layout)
+    Plotly.newPlot('plot_p_2_1', data1, layout, {displayModeBar: false})
+    Plotly.newPlot('plot_p_2_2', data2, layout, {displayModeBar: false})
+    Plotly.newPlot('plot_p_2_3', data3, layout, {displayModeBar: false})
 
     //console.log(picked_orders)
     //return picked_orders
@@ -220,7 +220,7 @@ function open_orders(data_source, warehouse) {
       margin: { t: 80, b: 0, l: 0, r: 0 }
     }
 
-    Plotly.newPlot('plot_p_1', data1, layout)
+    Plotly.newPlot('plot_p_1', data1, layout, {displayModeBar: false})
 
 
 
