@@ -77,25 +77,24 @@ function pickers_w(warehouse, place) {
 
 
 
-
 function orders(data_source) {
-  d3.json(data_source).then((d) => {
-    // console.log(d)
-    // console.log(d['10'])
-    // console.log(d['10']["('Today', 'Picking')"])
+  d3.json(data_source).then((data) => {
+    // console.log(data)
+    // console.log(data['10'])
+    // console.log(data['10']["('Today', 'Picking')"])
 
 
     // var picked_orders = parseInt(d['10']['Picking'])
     // var packed_orders = parseInt(d['10']['Rate And Ship'])
     // var batched_orders = parseInt(d['10']['Batch Move'])
 
-    var today_picked_orders = parseInt(d['10']["('Today', 'Picking')"])
-    var today_packed_orders = parseInt(d['10']["('Today', 'Rate And Ship')"])
-    var today_batched_orders = parseInt(d['10']["('Today', 'Batch Move')"])
+    var today_picked_orders = parseInt(data['10']["('Today', 'Picking')"])
+    var today_packed_orders = parseInt(data['10']["('Today', 'Rate And Ship')"])
+    var today_batched_orders = parseInt(data['10']["('Today', 'Batch Move')"])
 
-    var yesterday_picked_orders = parseInt(d['10']["('Yesterday', 'Picking')"])
-    var yesterday_packed_orders = parseInt(d['10']["('Yesterday', 'Rate And Ship')"])
-    var yesterday_batched_orders = parseInt(d['10']["('Yesterday', 'Batch Move')"])
+    var yesterday_picked_orders = parseInt(data['10']["('Yesterday', 'Picking')"])
+    var yesterday_packed_orders = parseInt(data['10']["('Yesterday', 'Rate And Ship')"])
+    var yesterday_batched_orders = parseInt(data['10']["('Yesterday', 'Batch Move')"])
 
     var data1 = [{
       type: "indicator",
@@ -156,7 +155,8 @@ function orders(data_source) {
       },
       title: {
         //text: "<span style='font-size: 1.5em'>Orders Picked</span>"
-        text: "Orders Batched"
+        text: "Orders Batched",
+        align: 'bottom'
       }
     }]
 
@@ -179,6 +179,64 @@ function orders(data_source) {
 
 
 
+
+
+
+
+
+function open_orders(data_source, warehouse) {
+  d3.json(data_source).then((data) => {
+    console.log(data)
+    console.log(data[warehouse])
+    console.log(data[warehouse]["Shipments"])
+
+    var open = data[warehouse]["Shipments"]
+
+
+    
+    var data1 = [{
+      type: "indicator",
+      mode: "number",
+      //mode: 'number',
+      value: open,
+      // number: {
+      //   font: {
+      //     color: 'gray',
+      //     size: 40
+      //   }
+      // },
+      title: {
+        text: "<span style='font-size: 3.5em'>Open Orders</span>"
+        //text: "Open Orders"
+      }
+    }]
+
+    
+
+    var layout = {
+      paper_bgcolor: "#F0F0F0",
+      //width: 600,
+      height: 200,
+      margin: { t: 90, b: 0, l: 0, r: 0 }
+    }
+
+    Plotly.newPlot('plot_p_1', data1, layout)
+
+
+
+  });
+}
+
+
+
+
+
+
+
+
+
+
 orders('data/W10_Orders.json')
+open_orders('data/Open_Orders.json', '10')
 pickers_w('data/W10_Picking.json', 'plot_p_1_1')
 
