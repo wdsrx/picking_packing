@@ -202,11 +202,11 @@ function open_orders(data_source, warehouse) {
       number: {
         font: {
           //color: 'gray',
-          size: 70
+          size: 60
         }
       },
       title: {
-        text: "<span style='font-size: 4.3em'>Open Orders</span>"
+        text: "<span style='font-size: 4em'>Open Orders</span>"
         //text: "Open Orders"
       }
     }]
@@ -217,7 +217,7 @@ function open_orders(data_source, warehouse) {
       paper_bgcolor: "#F0F0F0",
       //width: 600,
       height: 180,
-      margin: { t: 100, b: 0, l: 0, r: 0 }
+      margin: { t: 80, b: 0, l: 0, r: 0 }
     }
 
     Plotly.newPlot('plot_p_1', data1, layout)
