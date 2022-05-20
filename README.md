@@ -1,21 +1,21 @@
 # Open Orders Performance
 
+## Summary
 This is a live dhasboard that shows the number of Sales Orders pending for picking, the activity per employee, and a comparison between current day and previous day.
 
 The 'Dashboard' is displayed in a 65 inches monitor in the middle of the warehouse, and has the intention to increase productivity performance by modifying only one variable, the awarness of being observed.
 
-To Hawthorne Effect
+To evaluate the 'Hawthorne Effect', I will create another chart that compares the data before and after the dashboard was published.
 
-To prove the hypotesis that employees productivity increses when they feel they are being monitored, I will create another chart that compares the data before and after the dashboard was published.
-
-Early in the morning, the dashboard displays zero activity and the number of orders picked and packed the previous day.
+## Dashboard Description
+Early in the morning, the dashboard displays the number of unfinished Sales Orders, the activity of the day (zero) and the activity of the previous day in red.
 
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/morning.png">
 
 
-The dashboard is devided in three parts:
-1. Total Open Orders: Sales orders that need to be picked and packed.
-2. Employee Activity: This section is devided in 3 parts:
+The dashboard is devided in three sections:
+1. TOP - Open Orders: Sales orders that need to be picked and packed.
+2. MIDDLE: Activity by Employee. This section is devided in 3 parts:
    - Single Picking Activity: Sales Orders picked one by one
    - Single Packed Orders: Sales Orders packed one by one
    - Grouped Picking Activity: Orders picked in a group or batch
