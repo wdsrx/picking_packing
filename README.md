@@ -13,9 +13,11 @@ Early in the morning, the dashboard displays zero activity and the number of ord
 
 The dashboard is devided in three parts:
 1. Total Open Orders: Sales orders that need to be picked and packed.
-2. 
-
-During the day, the dashboard shows the name of the employees that are picking orders as well as packing. Without a single word, everyone can see who morks the most and who doesnt.
+2. Employee Activity: This section is devided in 3 parts:
+   - Single Picking Activity: Sales Orders picked one by one
+   - Single Packed Orders: Sales Orders packed one by one
+   - Grouped Picking Activity: Orders picked in a group or batch
+3. The third section in the bottom shows the number of sales orders picked, packed and batched (grouped orders), and compares the number with the previous day. If the small number next to it is in green, means that the warehouse has produced more than the previous day. If the small number is in red, means that the warehouse has produced less orders than the previous day.
 
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/afternoon.png">
 
