@@ -16,10 +16,10 @@ Early in the morning, the dashboard displays the number of unfinished Sales Orde
 The dashboard is devided in three sections:
 1. TOP - Open Orders: Sales orders that need to be picked and packed.
 2. MIDDLE: Activity by Employee. This section is devided in 3 parts:
-   - Single Picking Activity: Sales Orders picked one by one
-   - Single Packed Orders: Sales Orders packed one by one
-   - Grouped Picking Activity: Orders picked in a group or batch
-3. The third section in the bottom shows the number of sales orders picked, packed and batched (grouped orders), and compares the number with the previous day. If the small number next to it is in green, means that the warehouse has produced more than the previous day. If the small number is in red, means that the warehouse has produced less orders than the previous day.
+   - Lines PIcked by Employee: Sales Orders picked one order at a time.
+   - Boxes Packed by Employee: Number of Boxes packed.
+   - Batch Lines Moved: Sales Orders picked in a group (batch)
+3. BOTTOM: Number of sales orders picked, packed and batched (grouped orders) the current day in comparison with the orders picked, packed and batched the previous day. The small number next to te big one indicates if we overpermed or underperformed.
 
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/afternoon.png">
 
