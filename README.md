@@ -1,9 +1,9 @@
 # Open Orders Performance
 
 ## Summary
-This is a live dhasboard that shows the number of Sales Orders pending for picking, the activity per employee, and a comparison between current day and previous day.
+This is a live dashboard that shows the number of Sales Orders pending for picking, the activity per employee, and a comparison between current day and previous day.
 
-The 'Dashboard' is displayed in a 65 inches monitor in the middle of the warehouse, and has the intention to increase productivity performance by modifying only one variable, the awarness of being observed.
+The 'Dashboard' is displayed in a 65 inches monitor in the middle of the warehouse, and has the intention to increase productivity performance by modifying only one variable, the awareness of being observed.
 
 To evaluate the 'Hawthorne Effect', I will create another chart that compares the data before and after the dashboard was published.
 
@@ -13,14 +13,15 @@ Early in the morning, the dashboard displays the number of unfinished Sales Orde
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/morning.png">
 
 
-The dashboard is devided in three sections:
+The dashboard is divided in three sections:
 1. TOP - Open Orders: Sales orders that need to be picked and packed.
-2. MIDDLE: Activity by Employee. This section is devided in 3 parts:
-   - Lines PIcked by Employee: Sales Orders picked one order at a time.
+2. MIDDLE: Activity by Employee. This section is divided in 3 parts:
+   - Lines Picked by Employee: Sales Orders picked one order at a time.
    - Boxes Packed by Employee: Number of Boxes packed.
    - Batch Lines Moved: Sales Orders picked in a group (batch)
-3. BOTTOM: Number of sales orders picked, packed and batched (grouped orders) the current day in comparison with the orders picked, packed and batched the previous day. The small number next to te big one indicates if we overpermed or underperformed.
+3. BOTTOM: Number of sales orders picked, packed and batched (grouped orders) the current day in comparison with the orders picked, packed and batched the previous day. The small number next to the big one indicates if we overperformed or underperformed.
 
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/afternoon.png">
 
-
+## Conclusion
+I still need to work on the last chart to compare the employee performance before and after the dashboard was published.
