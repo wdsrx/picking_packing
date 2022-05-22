@@ -24,4 +24,4 @@ The dashboard is divided in three sections:
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/afternoon.png">
 
 ## Summary
-I haven't finish the analysis. The comparison between before and after the dashboard was displayed in the middle of the warehouse still pending.
+I haven't finished the analysis. The comparison between before and after the dashboard was displayed in the middle of the warehouse still pending.
