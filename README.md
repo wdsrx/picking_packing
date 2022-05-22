@@ -23,5 +23,5 @@ The dashboard is divided in three sections:
 
 <img src="https://github.com/wdsrx/picking_packing/blob/main/screenshots/afternoon.png">
 
-## Conclusion
-I still need to work on the last chart to compare the employee performance before and after the dashboard was published.
+## Summary
+I haven't finish the analysis. The comparison between before and after the dashboard was displayed in the middle of the warehouse still pending.
