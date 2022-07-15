@@ -206,7 +206,7 @@ function open_orders(data_source, warehouse) {
         }
       },
       title: {
-        text: "<span style='font-size: 4em'>Open Orders</span>"
+        text: "<span style='font-size: 4em'>Released Open Orders</span>"
         //text: "Open Orders"
       }
     }]
