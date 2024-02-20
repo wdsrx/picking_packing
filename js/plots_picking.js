@@ -236,7 +236,7 @@ function open_orders(data_source, warehouse) {
 
 
 
-orders('data/W10_Orders.json')
-open_orders('data/Open_Orders.json', '10')
-pickers_w('data/W10_Picking.json', 'plot_p_1_1')
+orders('data/W15_Orders.json')
+open_orders('data/Open_Orders.json', '15')
+pickers_w('data/W15_Picking.json', 'plot_p_1_1')
 
